@@ -1,33 +1,33 @@
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup"; // تأكد من تنصيب yup إذا لم يكن موجوداً
+import * as yup from "yup"; 
 import { useDispatch, useSelector } from "react-redux";
 import { Container, Form, FormGroup, Label, Button, Row, Col } from "reactstrap";
-import { addTask, updateTask } from "../Features/TaskSlice"; // تأكد من استيراد الأكشنز الصحيحة
+import { addTask, updateTask } from "../Features/TaskSlice"; 
 import { useNavigate, useParams } from "react-router-dom";
 
-// تعريف شروط التحقق للمهام
+
 const taskSchema = yup.object().shape({
   title: yup.string().required("Title is required"),
   description: yup.string().optional(),
 });
 
 const TaskManagement = () => {
-  const { id } = useParams(); // لجلب معرف المهمة من الرابط في حالة التعديل
+  const { id } = useParams(); 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // جلب البيانات من Redux
+
   const user = useSelector((state) => state.users.user);
   const tasks = useSelector((state) => state.tasks.items);
   const email = useSelector((state)=>state.users.user.email);
 
-  // تحديد وضع التعديل وجلب بيانات المهمة
+
   const isEditMode = Boolean(id);
   const taskToEdit = tasks.find((t) => t._id === id);
 
-  // States لربط المدخلات (useState) كما في اللوجن
+
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [priority, setPriority] = useState("Medium");
@@ -45,7 +45,7 @@ const TaskManagement = () => {
       setPriority(taskToEdit.priority);
       setStatus(taskToEdit.status);
       
-      // تحديث قيم react-hook-form أيضاً
+    
       setValue("title", taskToEdit.title);
       setValue("description", taskToEdit.description);
     }

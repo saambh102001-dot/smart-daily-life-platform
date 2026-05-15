@@ -2,7 +2,7 @@
 import mongoose from "mongoose";
 
 const taskSchema = new mongoose.Schema({
-    // ربط المهمة بمستخدم معين (Reference)
+  
     userId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
@@ -35,7 +35,7 @@ const taskSchema = new mongoose.Schema({
         type: Date
     }
 }, { 
-    timestamps: true // يقوم بإنشاء createdAt و updatedAt تلقائياً
+    timestamps: true 
 });
 
 const taskModel =mongoose.model ("tasks",taskSchema);

@@ -70,10 +70,10 @@ const Home = () => {
                 
                 <hr className="my-3" style={{ opacity: '0.08' }} />
                 
-                {/* --- منطقة الأزرار المعدلة --- */}
+          
                 <div className="d-flex justify-content-around align-items-center">
                   
-                  {/* إذا المهمة مو Completed يظهر الزر، إذا خلصت تظهر كلمة Completed */}
+             
                   {task.status !== 'Completed' ? (
                     <Button 
                       color="success" 
@@ -96,7 +96,7 @@ const Home = () => {
                     Delete
                   </Button>
                 </div>
-                {/* ------------------------- */}
+              
                 
               </div>
             </CardBody>

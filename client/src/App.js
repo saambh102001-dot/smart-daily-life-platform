@@ -18,11 +18,11 @@ function App() {
         <Header />
         <main style={{ minHeight: '80vh' }}>
           <Routes>
-            {/* المسارات العامة */}
+          
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
 
-            {/* المسارات المحمية (تطلب تسجيل دخول) */}
+           
             <Route path="/" element={<Home />} />
             <Route path="/addTask" element={<TaskManagement />} />
             <Route path="/updateTask/:id" element={<TaskManagement />} />

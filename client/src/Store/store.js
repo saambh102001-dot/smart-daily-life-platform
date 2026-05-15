@@ -6,6 +6,6 @@ import taskReducer from "../Features/TaskSlice";
 export const store = configureStore({
   reducer: {
     users: userReducer,
-    tasks: taskReducer, // إضافة المهام هنا
+    tasks: taskReducer, 
   },
 });

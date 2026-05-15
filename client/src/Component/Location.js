@@ -71,14 +71,14 @@ const Location = () => {
 
 const getExactLocation = () => {
     if (navigator.geolocation) {
-      // أضفنا الإعدادات لزيادة الدقة هنا
+   
       navigator.geolocation.getCurrentPosition(
         (position) => {
           const lat = position.coords.latitude;
           const lng = position.coords.longitude;
           setExactCoords({ lat, lng });
           
-          console.log("--- الموقع الدقيق جداً ---");
+       
           console.log("Latitude (lat):", lat);
           console.log("Longitude (lng):", lng);
         },
@@ -86,9 +86,9 @@ const getExactLocation = () => {
           console.log(error);
         },
         {
-          enableHighAccuracy: true, // تفعيل الدقة العالية (GPS)
-          timeout: 15000,           // مدة الانتظار القصوى 15 ثانية
-          maximumAge: 0             // عدم استخدام موقع قديم مخزن
+          enableHighAccuracy: true, 
+          timeout: 15000,           
+          maximumAge: 0             
         }
       );
     }

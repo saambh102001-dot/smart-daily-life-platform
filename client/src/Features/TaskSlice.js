@@ -4,21 +4,21 @@ import * as ENV from "../config";
 
 const BASE_URL = ENV.SERVER_URL;
 
-// 1. جلب كل المهام
+
 export const getTasks = createAsyncThunk("tasks/getTasks", async () => {
   const response = await axios.get(`${BASE_URL}/task`);
   return response.data;
 });
 
-// 2. إضافة مهمة جديدة
+
 export const addTask = createAsyncThunk("tasks/addTask", async (taskData) => {
   const response = await axios.post(`${BASE_URL}/addTask`, taskData);
-  return response.data.task; // تأكد أن السيرفر يرجع الكائن داخل task
+  return response.data.task; 
 });
 
-// 3. تحديث مهمة موجودة (التعديل)
+
 export const updateTask = createAsyncThunk("tasks/updateTask", async (taskData) => {
-  // نرسل الـ id في الرابط والبيانات الجديدة في الـ body
+ 
   const response = await axios.put(`${BASE_URL}/updateTask/${taskData.id}`, {
     title: taskData.title,
     description: taskData.description,
@@ -28,7 +28,7 @@ export const updateTask = createAsyncThunk("tasks/updateTask", async (taskData) 
   return response.data.task;
 });
 
-// 4. حذف مهمة
+
 export const deleteTask = createAsyncThunk("tasks/deleteTask", async (id) => {
   await axios.delete(`${BASE_URL}/deleteTask/${id}`);
   return id;
@@ -56,7 +56,7 @@ const taskSlice = createSlice({
       .addCase(addTask.fulfilled, (state, action) => {
         state.items.push(action.payload);
       })
-      // Update Task - التحديث في الحالة المحلية بعد نجاح السيرفر
+      // Update Task - 
       .addCase(updateTask.fulfilled, (state, action) => {
         const index = state.items.findIndex((item) => item._id === action.payload._id);
         if (index !== -1) {
