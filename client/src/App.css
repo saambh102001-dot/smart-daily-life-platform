@@ -1,0 +1,85 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+:root {
+  --calm-blue: #5d8aa8; /* أزرق هادئ ومريح */
+  --soft-bg: #f4f7f6;   /* خلفية رمادية مخضرة خفيفة جداً */
+  --text-dark: #34495e; /* لون نص رمادي داكن مريح بدل الأسود */
+  --card-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+body { 
+  background-color: var(--soft-bg); 
+  color: var(--text-dark);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+/* الهيدر بلون مريح */
+.main-navbar { 
+  background-color: white !important; 
+  border-bottom: 1px solid #e1e8ed; 
+}
+.nav-link { color: var(--text-dark) !important; font-weight: 500; }
+.logo-text { color: var(--calm-blue) !important; letter-spacing: 0.5px; }
+
+/* البطاقات بنوافذ ناعمة */
+.task-card { 
+  border: none !important;
+  border-radius: 12px !important; 
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+}
+
+/* الأزرار بألوان ناعمة */
+.btn-calm { 
+  background-color: var(--calm-blue) !important; 
+  border: none; 
+  color: white;
+  border-radius: 8px !important;
+}
+.btn-calm:hover { background-color: #4a6e85 !important; }
+
+/* النماذج (Forms) */
+.form-container {
+  background: white;
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
