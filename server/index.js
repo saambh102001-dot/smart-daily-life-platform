@@ -31,6 +31,8 @@ app.use(cors());
 
 //const connectString = `mongodb://${ENV.DB_USER}:${ENV.DB_PASSWORD}@ac-f6vrkok-shard-00-00.ozhegpq.mongodb.net:27017,ac-f6vrkok-shard-00-01.ozhegpq.mongodb.net:27017,ac-f6vrkok-shard-00-02.ozhegpq.mongodb.net:27017/samrtDailyLive?ssl=true&replicaSet=atlas-gdmm07-shard-0&authSource=admin&appName=studAppCluter`;
 //const connectString = `mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_CLUSTER}:27017,${process.env.DB_CLUSTER}:27017,${process.env.DB_CLUSTER}:27017/${process.env.DB_NAME}?ssl=true&replicaSet=atlas-gdmm07-shard-0&authSource=admin&appName=studAppCluter`;
+//const connectString = `mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD}@ac-f6vrkok-shard-00-00.ozhegpq.mongodb.net:27017,ac-f6vrkok-shard-00-01.ozhegpq.mongodb.net:27017,ac-f6vrkok-shard-00-02.ozhegpq.mongodb.net:27017/${process.env.DB_NAME}?ssl=true&replicaSet=atlas-gdmm07-shard-0&authSource=admin&appName=studAppCluter`;
+
 const connectString = `mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD}@ac-f6vrkok-shard-00-00.ozhegpq.mongodb.net:27017,ac-f6vrkok-shard-00-01.ozhegpq.mongodb.net:27017,ac-f6vrkok-shard-00-02.ozhegpq.mongodb.net:27017/${process.env.DB_NAME}?ssl=true&replicaSet=atlas-gdmm07-shard-0&authSource=admin&appName=studAppCluter`;
 
 mongoose.connect(connectString);
